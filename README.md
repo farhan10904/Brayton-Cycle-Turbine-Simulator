@@ -15,7 +15,7 @@ Mechanical drive gas turbines
 While ideal cycle analysis provides theoretical limits, real engines are governed by:
 Compressor and turbine inefficiencies
 Pressure losses in combustion
-Irreversibility's that reduce available work
+Irreversibilities that reduce available work
 This model was developed to move beyond ideal assumptions and quantify how these effects influence performance and optimal design points.
 
 Cycle Description
@@ -133,15 +133,17 @@ All operating conditions and assumptions can be modified in config.py.
 Configuration Parameters
 
 Parameter Default Description
-
-T1 298.15 K Compressor inlet temperature
-turbine_inlet_temperature 1400 K Turbine inlet temperature
-pressure_ratio 5.0 Baseline pressure ratio
-compressor_efficiency 0.85 Compressor isentropic efficiency
-turbine_efficiency 0.90 Turbine isentropic efficiency
-combustor_pressure_loss 0.05 Fractional pressure loss
-mass_flow_rate 10 kg/s Working fluid mass flow rate
-T_ambient 300 K Ambient reference temperature for exergy
+| Parameter | Value | Description |
+|----------------|-------------|------------------------------------|
+| T1 | 298.15 K | Compressor inlet temperature |
+| P1 | 100,000 Pa | Ambient pressure |
+| TIT | 1400 K | Turbine inlet temperature |
+| γ | 1.4 | Specific heat ratio (air) |
+| Cp | 1005 J/kg·K | Specific heat at constant pressure |
+| η_c | 0.85 | Compressor isentropic efficiency |
+| η_t | 0.90 | Turbine isentropic efficiency |
+| ṁ | 10 kg/s | Mass flow rate |
+| Combustor loss | 5% | Pressure loss across combustor |
 
 Technical Scope
 
@@ -152,3 +154,8 @@ Sensitivity analysis
 Component-level irreversibility quantification
 Structured modular engineering code
 It represents a simplified but structured gas turbine conceptual performance tool suitable for early-stage design studies.
+
+resukts
+
+![Net Work vs Pressure Ratio](Graphs/Net_Work_vs_Pressure_Ratio_Comparison.png)
+![Efficiency vs Pressure Ratio](Graphs/Efficiency_vs_Pressure_Ratio_Comparison.png)
