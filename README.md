@@ -104,17 +104,11 @@ These behaviours align with practical gas turbine design trends.
 Project Structure
 
 ├── config.py # Input parameters and operating conditions
-
 ├── brayton.py # Ideal and real cycle thermodynamic models
-
 ├── sensitivity.py # Parametric pressure ratio and TIT sweeps
-
 ├── plots.py # Graph generation and saving
-
 ├── main.py # Runs full simulation pipeline
-
 ├── Results/ # CSV performance outputs
-
 └── Graphs/ # Saved performance plots
 
 Installation
