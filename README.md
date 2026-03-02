@@ -1,13 +1,13 @@
-Brayton-Cycle-Turbine-Simulator
-Overview
+# Brayton-Cycle-Turbine-Simulator
 
-Python-based thermodynamic performance model of an ideal and real Brayton cycle gas turbine.
+Python-based thermodynamic performance model of an ideal and real Brayton cycle gas turbine.The simulator evaluates compressor, combustor, and turbine behaviour under realistic inefficiencies, performs parametric pressure ratio studies, and quantifies both energy and exergy performance using NumPy, Pandas, and Matplotlib.
 
-The simulator evaluates compressor, combustor, and turbine behaviour under realistic inefficiencies, performs parametric pressure ratio studies, and quantifies both energy and exergy performance using NumPy, Pandas, and Matplotlib.
+## Overview
 
 The tool bridges textbook thermodynamics with practical gas turbine design trade-offs.
 
-Engineering Context
+## Engineering Context
+
 The Brayton cycle forms the thermodynamic foundation of:
 Aircraft gas turbine engines
 Industrial power generation turbines
@@ -18,7 +18,8 @@ Pressure losses in combustion
 Irreversibilities that reduce available work
 This model was developed to move beyond ideal assumptions and quantify how these effects influence performance and optimal design points.
 
-Cycle Description
+## Cycle Description
+
 The Brayton cycle consists of four stages:
 Isentropic Compression
 Air is compressed, increasing pressure and temperature.
@@ -29,7 +30,7 @@ Hot gas expands through the turbine, producing shaft work.
 Constant Pressure Heat Rejection
 Exhaust returns to ambient pressure.
 
-Governing Equations
+## Governing Equations
 
 Ideal Compressor Outlet Temperature
 
@@ -78,7 +79,8 @@ Second-law (exergy) efficiency is defined as:
 
 This provides a deeper measure of performance than thermal efficiency alone.
 
-Parametric Study
+## Parametric Study
+
 Pressure ratio is swept across a configurable range.
 For each pressure ratio, the model calculates:
 Compressor and turbine work
@@ -93,7 +95,8 @@ Pressure ratio for maximum thermal efficiency
 Pressure ratio for maximum second-law efficiency
 Results are exported as structured CSV files for further analysis.
 
-Key Observations
+## Key Observations
+
 From the current configuration:
 Real-cycle optimal pressure ratio is significantly lower than ideal predictions.
 Compressor irreversibility increasingly dominates at high pressure ratios.
@@ -101,7 +104,7 @@ Thermal efficiency and second-law efficiency do not necessarily peak at the same
 Increasing turbine inlet temperature improves real-cycle efficiency but does not affect ideal-cycle efficiency.
 These behaviours align with practical gas turbine design trends.
 
-Project Structure
+## Project Structure
 
 ├── config.py # Input parameters and operating conditions
 
@@ -117,14 +120,16 @@ Project Structure
 
 └── Graphs/ # Saved performance plots
 
-Installation
+## Installation
+
 Requirements:
 Python 3.8+
 NumPy
 Pandas
 Matplotlib
 
-Install dependencies:
+## Install dependencies:
+
 pip install -r requirements.txt
 
 Usage
@@ -136,7 +141,7 @@ Graphs are saved to the Graphs/ folder.
 CSV outputs are saved to the Results/ folder.
 All operating conditions and assumptions can be modified in config.py.
 
-Configuration Parameters
+## Configuration Parameters
 
 Parameter Default Description
 | Parameter | Value | Description |
@@ -151,7 +156,7 @@ Parameter Default Description
 | ṁ | 10 kg/s | Mass flow rate |
 | Combustor loss | 5% | Pressure loss across combustor |
 
-Technical Scope
+## Technical Scope
 
 This project demonstrates:
 Applied thermodynamic modelling
@@ -161,7 +166,7 @@ Component-level irreversibility quantification
 Structured modular engineering code
 It represents a simplified but structured gas turbine conceptual performance tool suitable for early-stage design studies.
 
-results
+## results
 
 ![Net Work vs Pressure Ratio](Graphs/Net_Work_vs_Pressure_Ratio_Comparison.png)
 ![Second Law Efficiency](Graphs/Second_Law_Efficiency_vs_Pressure_Ratio_Comparison.png)
