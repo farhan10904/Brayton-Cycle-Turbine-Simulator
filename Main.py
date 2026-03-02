@@ -1,8 +1,22 @@
-from Sensitivity import sensitivity_pressure_ratio
+from Sensitivity import sensitivity_pressure_ratio, sensitivity_turbine_inlet_temperature
 from Brayton import calculate_cycle_real, calculate_cycle
-from Plots import plot_LossBreakdown_comparison, plot_second_law_efficiency_comparison, plot_specific_exergy_destruction_comparison, plot_exergy_destruction_comparison, plot_efficiency_vs_pressure_ratio_comparison, plot_efficiency_vs_net_work_comparison, plot_net_work_vs_pressure_ratio_comparison, plot_power_vs_pressure_ratio_comparison, plot_net_power_vs_pressure_ratio_real_cpl_5, plot_net_power_vs_pressure_ratio_real_cpl_0, plot_efficiency_vs_pressure_ratio, plot_efficiency_vs_net_work, plot_net_work_vs_pressure_ratio
+from Plots import plot_efficiency_vs_tit_comparison,plot_LossBreakdown_comparison, plot_second_law_efficiency_comparison, plot_specific_exergy_destruction_comparison, plot_exergy_destruction_comparison, plot_efficiency_vs_pressure_ratio_comparison, plot_efficiency_vs_net_work_comparison, plot_net_work_vs_pressure_ratio_comparison, plot_power_vs_pressure_ratio_comparison, plot_net_power_vs_pressure_ratio_real_cpl_5, plot_net_power_vs_pressure_ratio_real_cpl_0, plot_efficiency_vs_pressure_ratio, plot_efficiency_vs_net_work, plot_net_work_vs_pressure_ratio
 import pandas as pd
 import Config
+
+df_tit_ideal = sensitivity_turbine_inlet_temperature(
+    Config.tit_min, 
+    Config.tit_max, 
+    Config.tit_step, 
+    cycle = calculate_cycle
+)
+
+df_tit_real = sensitivity_turbine_inlet_temperature(
+    Config.tit_min, 
+    Config.tit_max, 
+    Config.tit_step, 
+    cycle = calculate_cycle_real
+)
 
 df_ideal = sensitivity_pressure_ratio(
     Config.pr_min,
@@ -59,16 +73,17 @@ summary = pd.concat([
 summary.to_csv("Results/cycle_optima_summary.csv", index=False)
 
 
-plot_efficiency_vs_pressure_ratio(df_ideal)
-plot_efficiency_vs_net_work(df_ideal)
-plot_net_work_vs_pressure_ratio(df_ideal)
-plot_net_work_vs_pressure_ratio_comparison(df_ideal, df_real)
-plot_power_vs_pressure_ratio_comparison(df_ideal, df_real)
-plot_net_power_vs_pressure_ratio_real_cpl_5(df_real)
-plot_net_power_vs_pressure_ratio_real_cpl_0(df_real)
-plot_efficiency_vs_pressure_ratio_comparison(df_ideal, df_real)
-plot_efficiency_vs_net_work_comparison(df_ideal, df_real)
-plot_exergy_destruction_comparison(df_ideal, df_real)
-plot_second_law_efficiency_comparison(df_ideal, df_real)
-plot_LossBreakdown_comparison(df_ideal, df_real)
-plot_specific_exergy_destruction_comparison(df_ideal, df_real)
+# plot_efficiency_vs_pressure_ratio(df_ideal)
+# plot_efficiency_vs_net_work(df_ideal)
+# plot_net_work_vs_pressure_ratio(df_ideal)
+# plot_net_work_vs_pressure_ratio_comparison(df_ideal, df_real)
+# plot_power_vs_pressure_ratio_comparison(df_ideal, df_real)
+# plot_net_power_vs_pressure_ratio_real_cpl_5(df_real)
+# plot_net_power_vs_pressure_ratio_real_cpl_0(df_real)
+# plot_efficiency_vs_pressure_ratio_comparison(df_ideal, df_real)
+# plot_efficiency_vs_net_work_comparison(df_ideal, df_real)
+# plot_exergy_destruction_comparison(df_ideal, df_real)
+# plot_second_law_efficiency_comparison(df_ideal, df_real)
+# plot_LossBreakdown_comparison(df_ideal, df_real)
+# plot_specific_exergy_destruction_comparison(df_ideal, df_real)
+plot_efficiency_vs_tit_comparison(df_tit_ideal, df_tit_real)

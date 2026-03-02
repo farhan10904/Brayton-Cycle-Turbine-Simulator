@@ -166,3 +166,16 @@ def plot_LossBreakdown_comparison(df_ideal, df_real):
     plt.tight_layout()
     plt.savefig("Graphs/Loss_Breakdown_vs_Pressure_Ratio_Comparison.png")
     plt.show()
+
+def plot_efficiency_vs_tit_comparison(df_tit_ideal, df_tit_real):
+    plt.figure(figsize=(8, 5))
+    plt.plot(df_tit_ideal["turbine_inlet_temperature"], df_tit_ideal["thermal_efficiency"]*100, marker='o', label="Ideal Cycle")
+    plt.plot(df_tit_real["turbine_inlet_temperature"], df_tit_real["thermal_efficiency"]*100, marker='x', label="Real Cycle")
+    plt.xlabel("Turbine Inlet Temperature (K)")
+    plt.ylabel("Thermal Efficiency (%)")
+    plt.title("Thermal Efficiency vs Turbine Inlet Temperature (Ideal vs Real)")
+    plt.grid(True)
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig("Graphs/Thermal_Efficiency_vs_Turbine_Inlet_Temperature_Comparison.png")
+    plt.show()
