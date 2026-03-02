@@ -17,7 +17,11 @@ def sensitivity_pressure_ratio(pr_min, pr_max, pr_step, cycle):
                     gamma = Config.gamma,
                     Cp = Config.Cp,
                     compressor_efficiency = Config.compressor_efficiency,
-                    turbine_efficiency = Config.turbine_efficiency
+                    turbine_efficiency = Config.turbine_efficiency,
+                    mass_flow_rate = Config.mass_flow_rate,
+                    combustor_pressure_loss = Config.combustor_pressure_loss,
+                    R = Config.R,
+                    T_ambient = Config.T_ambient
                 )
             else:
                 cycle_results = calculate_cycle(
@@ -26,7 +30,11 @@ def sensitivity_pressure_ratio(pr_min, pr_max, pr_step, cycle):
                     pressure_ratio = Pr,
                     turbine_inlet_temperature = Config.turbine_inlet_temperature,
                     gamma = Config.gamma,
-                    Cp = Config.Cp
+                    Cp = Config.Cp,
+                    mass_flow_rate = Config.mass_flow_rate,
+                    combustor_pressure_loss = Config.combustor_pressure_loss,
+                    R = Config.R,
+                    T_ambient = Config.T_ambient
                 )
             cycle_results["pressure_ratio"] = Pr
             results.append(cycle_results)
@@ -49,7 +57,11 @@ def sensitivity_turbine_inlet_temperature(tit_min, tit_max, tit_step, cycle):
                     gamma = Config.gamma,
                     Cp = Config.Cp,
                     compressor_efficiency = Config.compressor_efficiency,
-                    turbine_efficiency = Config.turbine_efficiency
+                    turbine_efficiency = Config.turbine_efficiency,
+                    mass_flow_rate = Config.mass_flow_rate,
+                    combustor_pressure_loss = Config.combustor_pressure_loss,
+                    R = Config.R,
+                    T_ambient = Config.T_ambient
                 )
             else:
                 cycle_results = calculate_cycle(
@@ -58,7 +70,11 @@ def sensitivity_turbine_inlet_temperature(tit_min, tit_max, tit_step, cycle):
                     pressure_ratio = Config.pressure_ratio,
                     turbine_inlet_temperature = Tit,
                     gamma = Config.gamma,
-                    Cp = Config.Cp
+                    Cp = Config.Cp,
+                    mass_flow_rate = Config.mass_flow_rate,
+                    combustor_pressure_loss = Config.combustor_pressure_loss,
+                    R = Config.R,
+                    T_ambient = Config.T_ambient
                 )
             cycle_results["turbine_inlet_temperature"] = Tit
             results.append(cycle_results)

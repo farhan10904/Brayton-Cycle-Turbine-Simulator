@@ -10,7 +10,7 @@ pressure_ratio = 5.0
 turbine_inlet_temperature = 1400.0 # K
 
 # Mass Flow Rate
-mass_flow_rate = 1.0 # kg/s
+mass_flow_rate = 10.0 # kg/s
 
 # Gas Properties
 gamma = 1.4  # Specific heat ratio
@@ -34,3 +34,6 @@ pr_step = 1
 tit_min = 1400
 tit_max = 1800
 tit_step = 50
+
+#Combustor Pressure Loss
+combustor_pressure_loss = 0.05 # 5% pressure loss in combustor
