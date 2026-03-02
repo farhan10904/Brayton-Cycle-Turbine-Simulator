@@ -155,7 +155,7 @@ Component-level irreversibility quantification
 Structured modular engineering code
 It represents a simplified but structured gas turbine conceptual performance tool suitable for early-stage design studies.
 
-resukts
+results
 
 ![Net Work vs Pressure Ratio](Graphs/Net_Work_vs_Pressure_Ratio_Comparison.png)
-![Efficiency vs Pressure Ratio](Graphs/Efficiency_vs_Pressure_Ratio_Comparison.png)
+![Second Law Efficiency](Graphs/Second_Law_Efficiency_vs_Pressure_Ratio_Comparison.png)
