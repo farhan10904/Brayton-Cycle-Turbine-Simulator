@@ -9,26 +9,31 @@ The tool bridges textbook thermodynamics with practical gas turbine design trade
 ## Engineering Context
 
 The Brayton cycle forms the thermodynamic foundation of:
-Aircraft gas turbine engines
-Industrial power generation turbines
-Mechanical drive gas turbines
+
+- Aircraft gas turbine engines
+- Industrial power generation turbines
+- Mechanical drive gas turbines
+
 While ideal cycle analysis provides theoretical limits, real engines are governed by:
-Compressor and turbine inefficiencies
-Pressure losses in combustion
-Irreversibilities that reduce available work
+
+- Compressor and turbine inefficiencies
+- Pressure losses in combustion
+- Irreversibilities that reduce available work
+
 This model was developed to move beyond ideal assumptions and quantify how these effects influence performance and optimal design points.
 
 ## Cycle Description
 
 The Brayton cycle consists of four stages:
-Isentropic Compression
-Air is compressed, increasing pressure and temperature.
-Constant Pressure Heat Addition
-Fuel combustion raises the working fluid temperature to the turbine inlet temperature (TIT).
-Isentropic Expansion
-Hot gas expands through the turbine, producing shaft work.
-Constant Pressure Heat Rejection
-Exhaust returns to ambient pressure.
+
+- **Isentropic Compression**
+- Air is compressed, increasing pressure and temperature.
+- **Constant Pressure Heat Addition**
+- Fuel combustion raises the working fluid temperature to the turbine inlet temperature (TIT).
+- **Isentropic Expansion**
+- Hot gas expands through the turbine, producing shaft work.
+- **Constant Pressure Heat Rejection**
+- Exhaust returns to ambient pressure.
 
 ## Governing Equations
 
@@ -48,14 +53,16 @@ Thermal Efficiency
 
 For the ideal cycle, thermal efficiency depends only on pressure ratio and is independent of turbine inlet temperature.
 
-Real Cycle Modelling
+## Real Cycle Modelling
+
 The real cycle incorporates:
-Compressor isentropic efficiency (η_c)
-Turbine isentropic efficiency (η_t)
-Combustor pressure loss (default 5%)
-Mass flow rate scaling
-Ambient reference temperature for exergy analysis
-Actual temperature relations:
+
+- Compressor isentropic efficiency (η_c)
+- Turbine isentropic efficiency (η_t)
+- Combustor pressure loss (default 5%)
+- Mass flow rate scaling
+- Ambient reference temperature for exergy analysis
+- Actual temperature relations:
 
 T₂,actual = T₁ + (T₂s − T₁) / η_c
 
@@ -63,7 +70,7 @@ T₄,actual = T₃ − (T₃ − T₄s) · η_t
 
 These modifications introduce realistic irreversibilities into the model.
 
-Exergy (Second Law) Analysis
+## Exergy (Second Law) Analysis
 
 To quantify irreversibilities, entropy generation is calculated:
 
@@ -83,25 +90,31 @@ This provides a deeper measure of performance than thermal efficiency alone.
 
 Pressure ratio is swept across a configurable range.
 For each pressure ratio, the model calculates:
-Compressor and turbine work
-Net work and net power
-Thermal efficiency
-Entropy generation
-Component-level exergy destruction
-Second-law efficiency
+
+- Compressor and turbine work
+- Net work and net power
+- Thermal efficiency
+- Entropy generation
+- Component-level exergy destruction
+- Second-law efficiency
+
 The simulation automatically identifies:
-Pressure ratio for maximum net power
-Pressure ratio for maximum thermal efficiency
-Pressure ratio for maximum second-law efficiency
+
+- Pressure ratio for maximum net power
+- Pressure ratio for maximum thermal efficiency
+- Pressure ratio for maximum second-law efficiency
+
 Results are exported as structured CSV files for further analysis.
 
 ## Key Observations
 
 From the current configuration:
-Real-cycle optimal pressure ratio is significantly lower than ideal predictions.
-Compressor irreversibility increasingly dominates at high pressure ratios.
-Thermal efficiency and second-law efficiency do not necessarily peak at the same operating point.
-Increasing turbine inlet temperature improves real-cycle efficiency but does not affect ideal-cycle efficiency.
+
+- Real-cycle optimal pressure ratio is significantly lower than ideal predictions.
+- Compressor irreversibility increasingly dominates at high pressure ratios.
+- Thermal efficiency and second-law efficiency do not necessarily peak at the same operating point.
+- Increasing turbine inlet temperature improves real-cycle efficiency but does not affect ideal-cycle efficiency.
+
 These behaviours align with practical gas turbine design trends.
 
 ## Project Structure
@@ -123,16 +136,16 @@ These behaviours align with practical gas turbine design trends.
 ## Installation
 
 Requirements:
-Python 3.8+
-NumPy
-Pandas
-Matplotlib
 
-## Install dependencies:
+- Python 3.8+
+- NumPy
+- Pandas
+- Matplotlib
 
 pip install -r requirements.txt
 
-Usage
+## Usage
+
 Run the full simulation from the project root:
 python main.py
 
@@ -159,14 +172,16 @@ Parameter Default Description
 ## Technical Scope
 
 This project demonstrates:
-Applied thermodynamic modelling
-First and second law integration
-Sensitivity analysis
-Component-level irreversibility quantification
-Structured modular engineering code
+
+- Applied thermodynamic modelling
+- First and second law integration
+- Sensitivity analysis
+- Component-level irreversibility quantification
+- Structured modular engineering code
+
 It represents a simplified but structured gas turbine conceptual performance tool suitable for early-stage design studies.
 
-## results
+## Results
 
 ![Net Work vs Pressure Ratio](Graphs/Net_Work_vs_Pressure_Ratio_Comparison.png)
 ![Second Law Efficiency](Graphs/Second_Law_Efficiency_vs_Pressure_Ratio_Comparison.png)
