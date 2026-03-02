@@ -20,7 +20,6 @@ Cp = 1005.0 # Specific heat at constant pressure (J/kg*K)
 # Efficiency
 compressor_efficiency = 0.85
 turbine_efficiency = 0.9
-combustion_efficiency = 0.98
 
 # Ambient Conditions
 T_ambient = 300.0 # K
