@@ -185,3 +185,15 @@ It represents a simplified but structured gas turbine conceptual performance too
 
 ![Net Work vs Pressure Ratio](Graphs/Net_Work_vs_Pressure_Ratio_Comparison.png)
 ![Second Law Efficiency](Graphs/Second_Law_Efficiency_vs_Pressure_Ratio_Comparison.png)
+
+## Author
+
+**Muhammed Farhan Ali**
+
+MEng Mechanical Engineering - University of Leicester
+
+[Engineering Portfolio](https://farhan10904.github.io/engineering-portfolio/) | [GitHub](https://github.com/farhan10904) | [LinkedIn](https://www.linkedin.com/in/farhan-ali-95047a245/)
+
+## Acknowledgements
+
+AI tools were used for planning, debugging assistance, code review, and documentation editing. final validation were performed and reviewed by the author.
